@@ -1,34 +1,34 @@
-class Student:
-    def __init__(self,name,species,hungry,tired,happy):
+class Human:
+    def __init__(self, name="No name", surname="No surname", age="No age"):
         self.name = name
-        self.species = species
-        self.hungry = True
-        self.tired = True
-        self.happy = False
-    def info(self):
-        name = self.name
-        species = self.species
-        hungry = self.hungry
-        tired = self.tired
-        happy = self.happy
+        self.surname = surname
+        self.age = age
+class Student:
+    def __init__(self, scholarship="no scholarship"):
+        self.human = human
+        self.scholarship = scholarship
 
-        if self.hungry:
-            print(f"{self.name} has been fed.")
-            self.hungry = False
-        else:
-            print(f"{self.name} is not hungry.")
-    def info(self):
-        if self.tired:
-            print(f"{self.name} has gone to sleep.")
-            self.tired = False
-        else:
-            print(f"{self.name} is not tired.")
-    def info(self):
-        if self.happy:
-            print(f"{self.name} is already playing.")
-        else:
-            print(f"{self.name} is playing now.")
-            self.happy = True
+class Group:
+    def __init__(self, namegroup="no namegroup"):
+        self.namegroup = namegroup
+        self.student = []
 
+    def add_student(self, human):
+        self.student.append(human)
+
+    def group_details(self):
+        if self.student != []:
+            print(f"автобус {self.student} має пасажирів:")
+            for student in self.student:
+                print(student.name)
+
+namegroup = Group("Champions")
+namegroup.add_student(Human("Olga"))
+namegroup.add_student(Human("Borys"))
+namegroup.add_student(Human("Adolf"))
+namegroup.add_student(Human("Yura"))
+namegroup.add_student(Human("Oleg"))
+namegroup.add_student(Human("Vovan"))
+namegroup.group_details()
 
 
